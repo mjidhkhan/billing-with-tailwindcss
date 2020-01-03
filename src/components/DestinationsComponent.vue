@@ -47,6 +47,7 @@
 import {ipcRenderer } from 'electron'
 import Swal from 'sweetalert2'
 
+
 ipcRenderer.on('selected-file', (event, files) => {
 				if (files.length == 0) {
 					Swal.fire({
@@ -58,7 +59,8 @@ ipcRenderer.on('selected-file', (event, files) => {
 					//showBasicButtons()
 					return
 				}
-				//addToList(files)
+				this.console.log(files)
+				//this.addToList(files)
 				
 				//gui.hideSummaryData()
 				})
@@ -70,9 +72,10 @@ export default {
 		AddToList: function(files){
 			files.forEach(element => {
 				//filePath = appUtils.showFile(element);
-				console.log(filePath)
+				//console.log(filePath)
+				this.console.log(element)
 				//addFilesToList(filePath)
-  			});
+			});
 
 		}
 	}
