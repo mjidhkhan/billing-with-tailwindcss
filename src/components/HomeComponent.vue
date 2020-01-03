@@ -12,9 +12,9 @@
 		<div class=" mx-auto w-1/2 bg-gray-800 mr-2 p-2">
 					<h1 class="mt-2 text-lg  text-white leading-tight  
 								sm:mt-8  sm:text-2xl lg:text-2xl xl:text-2xl font-light">
-						<p>
-							<i class="far fa-folder-open"></i> G3T SIP Billing
-						</p>
+						
+							G3T SIP Billing
+						
 					</h1>
 					<p class="mt-2 text-white sm:mt-4 sm:text-xl">
 						Workcation helps you find work-friendly rentals in beautiful 
