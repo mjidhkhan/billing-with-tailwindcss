@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-900 
+  <div class="bg-gray-900 fixed w-full z-10
               sm:flex sm:justify-between 
               sm:items-center sm:px-4 sm:py-3">
       <div class="flex items-center justify-between 
@@ -34,7 +34,7 @@
       <nav :class="isOpen ? 'block' : 'hidden'" class="sm:block">
         <div class="border-t border-teal-800 sm:border-t-0">
         <div class=" px-2 pt-2 pb-4 sm:flex sm:p-0  z-20">
-          <router-link to="/home" 
+          <router-link to="/home"  name="home" 
               class="cursor-pointer block px-2 py-1 text-gray-500 focus:text-white font-semibold 
                       rounded hover:bg-gray-800 hover:text-gray-100 focus:bg-gray-700">
               Home
@@ -42,22 +42,22 @@
           <router-link to="destinations" 
               class="cursor-pointer block px-2 py-1 text-gray-500 focus:text-white font-semibold 
                       rounded hover:bg-gray-800 hover:text-gray-100 focus:bg-gray-700">
-              Destinations
+              Billing
           </router-link>
           <router-link to="properties" 
               class="cursor-pointer block px-2 py-1 text-gray-500 focus:text-white font-semibold 
                       rounded hover:bg-gray-800 hover:text-gray-100 focus:bg-gray-700">
-              Properties
+              About
           </router-link>
           <router-link to="trips" 
               class="cursor-pointer mt-1 block px-2 py-1 text-gray-500 focus:text-white font-semibold 
                       rounded hover:bg-gray-800 hover:text-gray-100 focus:bg-gray-700 sm:mt-0 sm:ml-2">
-              Trips
+              Themes
           </router-link>
           <router-link to="review" 
               class="cursor-pointer mt-1 block px-2 py-1 text-gray-500 focus:text-white font-semibold 
                       rounded hover:bg-gray-800 hover:text-gray-100 focus:bg-gray-700 sm:mt-0 sm:ml-2">
-              Reviews
+              Help
           </router-link>
           <router-link v-if="!isLogin" to="login" 
               class=" cursor-pointer mt-1 block px-2 py-1 text-gray-500 focus:text-white font-semibold 
@@ -88,6 +88,7 @@
 <script>
 import AccountDropdown from './AccountDropdownComponent'
 export default {
+  
   components: {
     AccountDropdown,
   },
@@ -97,5 +98,6 @@ export default {
       isLogin:false,
     }
   },
+  
 }
 </script>

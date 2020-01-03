@@ -1,69 +1,69 @@
 <template>
-<div class="start"> 
-	<div  class="antialiased text-gray-800">
-		<div class=" flex bg-white overflow-hidden  lg:max-w-full ">
-			<div class="px-8 py-12 max-w-md mx-auto sm:max-w-xl 
-						lg:max-w-full lg:w-full lg:py-24 lg:px-12 ">
-				<div class="xl:max-w-lg xl:ml-auto">
-					<img class="h-10" 
-						src="/img/logo.svg" 
-						alt="Workcation">
+<div class="start p-6 "> 
+	<div class="mt-16 ml-auto flex shadow-xl ">
+			<div class="w-full bg-gray-800 p-5 shadow-xl">
+				<h1 class=" text-4xl antialiased tracking-wider text-white">
+					G3T Billing
+				</h1>
+			</div>
+	</div>
+	<div class="mt-4 flex  overflow-hidden shadow-lg ">
+		<div class="mx-auto w-full bg-gray-600 pt-8   bg-gray-600 p-4 shadow-xl">
+			<div class="w-full bg-gray-200 ">
+				<div class="">
+					<div class="mb-2 bg-gray-800">
+						<h1 class="p-4 text-white">
+						Browse CSV File
+						</h1>
+					</div>
+					<div class="text-gray-700 text-base bg-white p-12">
+						<p class="">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
+						</p>
+						<p class="">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
+						</p>
+						<p class="">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
+						</p>
+						<p class="">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
+						</p>
+						<p class="">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
+						</p>
+						<p class="">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
+						</p>
+						<p class="">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
+						</p>
+						
+					</div>
+				<div class="px-6 py-4 bg-gray-200 flex flex-row-reverse flex-wrap">
+					<button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold flex-end 
+						hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+						Button
+					</button>
 					
-					<h1 class="mt-2 text-lg font-bold text-gray-800 leading-tight  
-								sm:mt-8  sm:text-4xl lg:text-3xl xl:text-4xl">
-							World's best places to for workcation.
-							<br class="sm:hidden">
-							<span class="text-indigo-500">
-								Take advantage of it.
-							</span>
-					</h1>
-					<p class="mt-2 text-gray-600 sm:mt-4 sm:text-xl">
-						Workcation helps you find work-friendly rentals in beautiful 
-						locations so you can enjoy some nice weather even when you're 
-						not on vacation.
-					</p>
 				</div>
-			</div>
-			
-		</div>
-		<!-- Destination Card -->
-		<div class="max-auto ">
-			<div class="bg-gray-100 pb-12 border-gray-200 border-solid border-t">
-					<h2 class="text-xl text-gray-800 px-8">Popular destinations</h2>
-					<p class="text-gray-600 px-8">
-						A selection of great work-friendly 
-						cities with lots to see and explore.
-					</p>
-			</div>
-			<div class="flex flex-wrap pb-12">
-				<div class="mt-6 w-full px-4 w-1/2 sm:w-1/2 md:w-1/2 lg:w-1/3 xl:w-1/3"  
-							v-for="destination in destinations" 
-							:key="destination.id" >
-						<DestinationCard :destination="destination"/>
-					
 				</div>
+				
 			</div>
+
 		</div>
 		
 	</div>
+
 </div>
 
 </template>
 
 <script>
-import DestinationCard from './DestinationCardComponent'
-import store from '@/data/store'
+
 
 export default {
-	name:'home',
-	components: {
-		DestinationCard,
-	},
-  
-  data() {
-    return {
-        destinations:store.PropertyData.popularDestinations ,
-     }
- },
+	
+ 
 }
 </script>

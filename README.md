@@ -140,3 +140,23 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 ```shell
 yarn add vue-router && vuex
 ```
+
+### Create file ***postcss.config.js***  at  ***root directory***
+
+Add following code 
+```js
+// postcss.config.js
+module.exports = {
+    plugins: [
+        require('tailwindcss'),
+        require('autoprefixer'),
+        process.env.NODE.ENV === 'production' && require('@fullhuman/postcss-purgecss')({
+            content:[
+                './src/**/*.vue',
+                './public/index.html',
+            ],
+            defaultExtractor: content => content.match(/[A-Za-z0-9-_:/]+/) || []
+        })
+    ]
+}
+```
