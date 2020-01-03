@@ -24,10 +24,10 @@
 				<div class="px-6 py-4 bg-gray-200 flex flex-row-reverse flex-wrap border-t border-gray-500">
 					<button class="bg-transparent hover:bg-blue-500 text-blue-700 text-base flex-end 
 						hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded 
-						font-normal hover:font-medium ">
+						font-normal hover:font-medium " v-on:click="BrowseForFiles()">
 						Browse
 					</button>
-					<v-btn color="primary" @click="openFile()">Open File</v-btn>
+					
 					
 				</div>
 				</div>
@@ -44,8 +44,31 @@
 
 <script>
 
-
+import {ipcRenderer } from 'electron'
+import Swal from 'sweetalert2'
 export default {
+	methods:{
+			BrowseForFiles:function(){
+			ipcRenderer.send('open-file-dialog')
+		},
+		selectedFile:function(){
+			ipcRenderer.on('selected-file', (event, files) => {
+				if (files.length == 0) {
+					Swal.fire({
+					type: 'error',
+					title: 'Whoops!...',
+					text: 'You did not select any file',
+					footer: ''
+					})
+					showBasicButtons()
+					return
+				}
+				addToList(files)
+				
+				gui.hideSummaryData()
+				})
+		}
+	}
 
 }
 </script>

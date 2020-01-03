@@ -1,6 +1,6 @@
 'use strict'
 
-import { app, protocol, BrowserWindow } from 'electron'
+import { app, protocol, BrowserWindow, dialog, ipcMain } from 'electron'
 import {
   createProtocol,
   installVueDevtools
@@ -87,3 +87,20 @@ if (isDevelopment) {
     })
   }
 }
+
+
+ipcMain.on('open-file-dialog', (event) => {
+
+  const files = dialog.showOpenDialog({
+    filters: [
+        { name: 'CSV', extensions: ['csv'] }
+    ],
+    properties: ['openFile','multiSelections']
+}, function(files) {
+
+    if (files) {
+        event.sender.send('selected-file', files)
+    }
+})
+
+})
