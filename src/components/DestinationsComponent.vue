@@ -27,6 +27,7 @@
 						font-normal hover:font-medium ">
 						Browse
 					</button>
+					<v-btn color="primary" @click="openFile()">Open File</v-btn>
 					
 				</div>
 				</div>
@@ -45,7 +46,6 @@
 
 
 export default {
-	
- 
+
 }
 </script>

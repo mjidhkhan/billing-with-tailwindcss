@@ -1,5 +1,10 @@
 module.exports = {
-  theme: {
+    theme: {
+      fontFamily: {
+            
+            'display': ['Montserrat'],
+            'body': ['Montserrat'],
+    },
     extend: {
       colors: {
                 primary: {
