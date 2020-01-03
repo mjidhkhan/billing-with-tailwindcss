@@ -46,13 +46,8 @@
 
 import {ipcRenderer } from 'electron'
 import Swal from 'sweetalert2'
-export default {
-	methods:{
-			BrowseForFiles:function(){
-			ipcRenderer.send('open-file-dialog')
-		},
-		selectedFile:function(){
-			ipcRenderer.on('selected-file', (event, files) => {
+
+ipcRenderer.on('selected-file', (event, files) => {
 				if (files.length == 0) {
 					Swal.fire({
 					type: 'error',
@@ -60,13 +55,25 @@ export default {
 					text: 'You did not select any file',
 					footer: ''
 					})
-					showBasicButtons()
+					//showBasicButtons()
 					return
 				}
-				addToList(files)
+				//addToList(files)
 				
-				gui.hideSummaryData()
+				//gui.hideSummaryData()
 				})
+export default {
+	methods:{
+			BrowseForFiles:function(){
+			ipcRenderer.send('open-file-dialog')
+		},
+		AddToList: function(files){
+			files.forEach(element => {
+				//filePath = appUtils.showFile(element);
+				console.log(filePath)
+				//addFilesToList(filePath)
+  			});
+
 		}
 	}
 
