@@ -17,5 +17,7 @@
       Navbar,
     },
   }
+
 </script>
+
 <style src="./assets/tailwind.css"></style>

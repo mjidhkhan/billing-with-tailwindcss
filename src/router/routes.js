@@ -5,7 +5,7 @@ import PasswordResetRequest from '@/components/PasswordResetRequestComponent'
 import PasswordReset from '@/components/PasswordResetComponent'
 import Home from  '@/components/HomeComponent'
 import Properties from '@/components/PropertiesComponent'
-import Destinations from '@/components/DestinationsComponent'
+import Billing from '@/components/BillingComponent'
 import Trips from '@/components/TripsComponent'
 import Review from '@/components/ReviewComponent'
 
@@ -41,7 +41,7 @@ import Review from '@/components/ReviewComponent'
 		{
 			path:'/destinations', 
 			name:'destinations',
-			component: Destinations
+			component: Billing
 		},
 		{
 			path:'/trips', 

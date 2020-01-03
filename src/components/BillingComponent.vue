@@ -24,7 +24,7 @@
 				<div class="px-6 py-4 bg-gray-200 flex flex-row-reverse flex-wrap border-t border-gray-500">
 					<button class="bg-transparent hover:bg-blue-500 text-blue-700 text-base flex-end 
 						hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded 
-						font-normal hover:font-medium " v-on:click="BrowseForFiles()">
+						font-normal hover:font-medium " @click="BrowseForFiles()">
 						Browse
 					</button>
 					
@@ -59,9 +59,8 @@ ipcRenderer.on('selected-file', (event, files) => {
 					//showBasicButtons()
 					return
 				}
-				this.console.log(files)
-				//this.addToList(files)
-				
+				//console.log(files)
+				this.AddToList(files)
 				//gui.hideSummaryData()
 				})
 export default {
