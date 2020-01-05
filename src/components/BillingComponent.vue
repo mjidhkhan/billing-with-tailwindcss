@@ -49,34 +49,37 @@ import Swal from 'sweetalert2'
 
 
 ipcRenderer.on('selected-file', (event, files) => {
-				if (files.length == 0) {
-					Swal.fire({
-					type: 'error',
-					title: 'Whoops!...',
-					text: 'You did not select any file',
-					footer: ''
-					})
-					//showBasicButtons()
-					return
-				}
-				//console.log(files)
-				this.AddToList(files)
-				//gui.hideSummaryData()
-				})
-export default {
-	methods:{
-			BrowseForFiles:function(){
-			ipcRenderer.send('open-file-dialog')
-		},
-		AddToList: function(files){
-			files.forEach(element => {
-				//filePath = appUtils.showFile(element);
-				//console.log(filePath)
-				this.console.log(element)
-				//addFilesToList(filePath)
-			});
+	if (files.length == 0) {
+		Swal.fire({
+			type: 'error',
+			title: 'Whoops!...',
+			text: 'You did not select any file',
+			footer: ''
+		})
+		//showBasicButtons()
+		return
+	}
+	//console.log(files)
+	//this.props.push(files)
+	AddToList(files)
+	//gui.hideSummaryData()
+})
 
-		}
+function AddToList(files){
+	files.forEach(element => {
+		//filePath = appUtils.showFile(element);
+		this.console.log(element)
+		//this.props.push(element)
+		//addFilesToList(filePath)
+	});
+}
+export default {
+	props: [],
+	methods:{
+			BrowseForFiles: function(){
+				ipcRenderer.send('open-file-dialog')
+			},
+			
 	}
 
 }
